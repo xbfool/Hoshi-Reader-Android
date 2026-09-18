@@ -80,4 +80,11 @@ jobs:
 
       - name: Test, lint, and assemble debug APK
         shell: bash
-        run: ./gradlew --no-daemon test lint assembleDebug
+        run: ./gradlew --no-daemon test lint assembleDebug assembleDebugAndroidTest
+
+      - name: Upload test APKs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: page-turn-debug-apks
+          path: app/build/outputs/apk/**/*.apk
