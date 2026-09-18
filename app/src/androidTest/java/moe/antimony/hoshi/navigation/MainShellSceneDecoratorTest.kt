@@ -88,6 +88,8 @@ class MainShellSceneDecoratorTest {
                     AppRoute.BooksRoute -> Text("Books content")
                     AppRoute.DictionaryRoute -> Text("Dictionary content")
                     AppRoute.StatisticsRoute -> Text("Statistics content")
+                    is AppRoute.StatisticsBookRoute -> Text("Statistics book content")
+                    AppRoute.StatisticsSettingsRoute -> Text("Statistics settings content")
                     AppRoute.SettingsRoute -> Column {
                         Text("Settings content")
                         Button(
